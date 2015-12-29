@@ -29,7 +29,7 @@ np.random.seed(1) #minor mistake: forgot to seed
 l1_weights = 2*np.random.random((3, 1))-1 #mistake: created 1x3 matrix instead of 3x1; minor mistake: didn't center around 0
 
 for i in xrange(1000): #mistake: forgot about python's ranges in for loops
-	# forward propagation
+	# feed forward
 	l1_rawoutputs = np.dot(inputs, l1_weights) #correct
 	l1_outputs = sigm(l1_rawoutputs) #correct
 	l1_errors = l1_outputs - targets #correct; column vector
