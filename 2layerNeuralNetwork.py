@@ -44,7 +44,7 @@ for i in xrange(60000):
 	
 	# back propagation
 	l2_deltaweights = l2_errors * sigmderiv(l2_outputs) # (4x1)
-	l1_errors = np.dot(l2_deltaweights, l2_weights.T) #mistake: transposed l2-delta instead of weights, thinking it wouldn't matter which. (4x1).(1x4)=(1x1) != (1x4).(4x1)=(4x4)
+	l1_errors = np.dot(l2_deltaweights, l2_weights.T) #mistake: transposed l2-delta instead of weights, thinking it wouldn't matter which. But (4x1).(1x4)=(4x4) != (1x4).(4x1)=(1x1)
 	l1_deltaweights = l1_errors * sigmderiv(l1_outputs)
 	l2_weights += -np.dot(l1_outputs.T, l2_deltaweights)
 	l1_weights += -np.dot(inputs.T, l1_deltaweights)
